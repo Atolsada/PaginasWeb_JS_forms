@@ -38,6 +38,9 @@ document.addEventListener('DOMContentLoaded', () => {
     new Interactivo()
 }) 
 
+//Uncaught SyntaxError: Unexpected token {      app.js:33
+
+
 //Igual que arriba (son anonimas) pero arriba es mas compacta
 //document.addEventListener('DOMContentLoaded', 
 //   function () {new Form()
