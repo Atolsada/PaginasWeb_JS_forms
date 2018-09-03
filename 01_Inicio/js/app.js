@@ -30,11 +30,15 @@
 //)()
 
 
-import { Main} from './main.js'
+import { Form } from './form.js'
+import { Interacivo } from './interactivo.js'
 
-// document.addEventListener('DOMContentLoaded', () => new Main())
+document.addEventListener('DOMContentLoaded', () => {
+    new Form()
+    new Interactivo()
+}) 
 
 //Igual que arriba (son anonimas) pero arriba es mas compacta
-document.addEventListener('DOMContentLoaded', 
-   function () {new Main()
-   })
+//document.addEventListener('DOMContentLoaded', 
+//   function () {new Form()
+//   })
