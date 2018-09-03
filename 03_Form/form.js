@@ -1,6 +1,6 @@
 export class Form{
     constructor(){
-        document.addEventListener('DOMContentLoaded', function () {
-            
-        }
+        document.addEventListener('DOMContentLoaded', function () {}
+
+        )}
 }
