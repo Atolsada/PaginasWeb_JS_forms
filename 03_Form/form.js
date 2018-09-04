@@ -35,7 +35,7 @@ export class Form {
         this.data.opciones.turn = this.setTurno()
         this.data.opciones.curse = this.setCurso() 
         this.data.aficiones = this.aficiones()
-        
+
         console.log(this.data)
         //console.dir(this.domForm)
         console.dir(document.querySelector('#condiciones').value)
@@ -88,5 +88,16 @@ export class Form {
             text :  curso[curso.selectedIndex].textContent
         }
         return 
+    }
+
+    verCurso() {
+        let aDatos = []
+        let aAficiones = document.querySelectorAll('.aficiones')
+        aAficiones.forEach( item => {
+            if (item.checked){
+                aDatos.push(item.id)
+            }
+        })
+        return aDatos
     }
 }
