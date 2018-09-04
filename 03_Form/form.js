@@ -7,12 +7,17 @@ export class Form {
                 turn: '',
                 curse: ''
             },
-            user : { 
+            ser : { 
                 name: '', 
                 f_name: ''},
             email: '',
             passw : '',
-            coments : ''
+            coments : '',
+            aficiones : {
+                musica: '',
+                lectura: '',
+                deporte: ''
+            }
         }
         this.domForm.addEventListener('submit',
             this.enviar.bind(this)
@@ -27,9 +32,10 @@ export class Form {
         this.data.email = document.querySelector('#correo').value
         this.data.passw = document.querySelector('#passw').value
         this.data.coments = document.querySelector('#comentarios').value
-        this.data.opciones.conditions
-        this.data.opciones.turn = this.verTurno()
-        this.data.opciones.curse
+        this.data.opciones.turn = this.setTurno()
+        this.data.opciones.curse = this.setCurso() 
+        this.data.aficiones = this.aficiones()
+        
         console.log(this.data)
         //console.dir(this.domForm)
         console.dir(document.querySelector('#condiciones').value)
@@ -72,4 +78,15 @@ export class Form {
         this.dara.passw = document.querySelector('#apassw').value //<--- Tambien se puede poner asi ( la otra forma la de this.data.user)
         console.dir(this.data)
     } */
-} 
+
+    verCurso() {
+        const curso = document.querySelector('#curso')
+        console.dir(curso.selectedIndex)
+        console.dir(curso[curso.selectedIndex])
+        const aDato = {
+            value :  curso[curso.selectedIndex].value,
+            text :  curso[curso.selectedIndex].textContent
+        }
+        return 
+    }
+}
