@@ -65,11 +65,11 @@ export class Form {
         }
     }
 
-     enviar(oEv) {
+     /* enviar(oEv) {
         oEv.preventDefault()
         //Dos formas de recoger los datos <----
         this.data.user = this.domUser.value
         this.dara.passw = document.querySelector('#apassw').value //<--- Tambien se puede poner asi ( la otra forma la de this.data.user)
         console.dir(this.data)
-    }
+    } */
 } 
