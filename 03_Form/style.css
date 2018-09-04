@@ -1,0 +1,22 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 2rem;
+    background-color: bisque;
+}
+
+section{
+    margin-top: 3rem;
+}
+
+.control-group{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.option-group{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
