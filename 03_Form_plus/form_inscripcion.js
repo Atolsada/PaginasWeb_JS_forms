@@ -22,6 +22,7 @@ export class FormInscripcion extends Form {
         this.data.coments = document.querySelector('#comentarios').value
         this.data.opciones.conditions = document.querySelector('#condiciones').checked
         this.data.opciones.turn = this.setRadio('turno')
+        this.data.sede = this.setRadio('sede')
         this.data.opciones.curse = this.setSelect('curso') 
         this.data.aficiones = this.setMultiCheck('aficiones')
         console.log(this.data)
