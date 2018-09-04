@@ -41,19 +41,21 @@
                 <!-- Cuando queremos que sea solo una opcion el name tiene que ser igual -->
                 <!-- Si queremos que se selecionen varios diferentes ponemos name diferentes -->
                 <legend>Selecciona un turno</legend>
-                <input type="radio" name="turno1" id="mañana">
+                <input type="radio" name="turno1" id="mañana" value="01">
                 <label for="mañana">Mañana</label>
-                <input type="radio" name="turno2" id="tarde">
+                <input type="radio" name="turno2" id="tarde" value="02">
                 <label for="tarde">Tarde</label>
-                <input type="radio" name="turno3" id="noche">
+                <input type="radio" name="turno3" id="noche" value="03">
                 <label for="noche">Noche</label>
             </div>
             <div class="control-group">
                 <label for="curso">Curso</label>
                 <select name="curso" id="curso">
-                    <option value="">Paginas Web</option>
-                    <option value="">Desarrollo Back</option>
-                    <option value="">Desarrollo App</option>
+                    <!-- Cuando no vale nada el value lo que seleccionas es el contenido de la opcion ej. PaginasWeb -->
+                    <!-- Es habitual que el value sea más especifico que lo que ve el ussuario para enviar internamente la opcion ej p.web -->
+                    <option value="pweb">Paginas Web</option>
+                    <option value="back">Desarrollo Back</option>
+                    <option value="mobile">Desarrollo App</option>
                 </select>
             </div>
         </fieldset>
