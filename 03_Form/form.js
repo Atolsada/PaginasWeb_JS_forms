@@ -38,29 +38,38 @@ export class Form {
         //Ambas nos devuelven un array de datos <---
         // let aTurnos = document.getElementsByName('turno')
         let aTurnos = document.querySelectorAll('[name="turno"]')
-        /* for (let i = 0; i < aTurnos.length; i++) {
+         for (let i = 0; i < aTurnos.length; i++) {
             const item = aTurnos[i]; //item en cada vuelta es mañana 0, tarde 1, noche 2. Es un iterador
             if(item.checked){
                 return item.value
-            } */
+            } 
         
-        let r = ''    
-        aTurnos.forEach(    // <--Forma moderna en vez de usar for
-            item => {
-                if (item.checked) {
-                    r = item.value
+        //let r = ''  <--- lo malo de este modo es que da vueltas hasta el final aunque el checked sea la primera
+        //aTurnos.forEach(     <--Forma moderna en vez de usar for
+        //aTurnos.some( <-- some en vez de forEach para que no te la vuelta entera
+        /* let r = ''
 
-                }
-            })
-            return r
+        let aDatos = []
+        aTurnos.forEach(
+            item => aDatos.push(item)
+        )   
+        aDatos.some(    
+                (item, i) => {
+                    console.log("Vuelta", i+1)
+                    if (item.checked) {
+                        r = item.value
+                        return true
+                    }
+                })
+            return r */
+        }
     }
-}
 
-/*     enviar(oEv) {
+     enviar(oEv) {
         oEv.preventDefault()
         //Dos formas de recoger los datos <----
         this.data.user = this.domUser.value
         this.dara.passw = document.querySelector('#apassw').value //<--- Tambien se puede poner asi ( la otra forma la de this.data.user)
         console.dir(this.data)
     }
-} */
+} 
