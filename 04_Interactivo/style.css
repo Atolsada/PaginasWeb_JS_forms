@@ -20,3 +20,11 @@ section{
     margin-top: 1rem;
     margin-bottom: 1rem;
 }
+
+.hide{
+    display: none;
+}
+
+.appear{
+    display: initial
+}
