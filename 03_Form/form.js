@@ -21,6 +21,7 @@ export class Form {
     enviar(oEv) {
         oEv.preventDefault()
         // this.data.user.name = document.querySelector('#nombre').value
+        //this.data.user.name = this.domForm.elements.nombre.value <--- A traves de elements para acceder a los elementos del formulario
         // this.data.passw = document.querySelector('#passw').value
         // console.log(this.data)
         
