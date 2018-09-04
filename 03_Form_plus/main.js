@@ -1,5 +1,5 @@
-import { Form} from './form.js'
+import { FormInscripcion } from './form_inscripcion'
 
 document.addEventListener('DOMContentLoaded', function () {
-    new Form()
+    new FormInscripcion()
 })
