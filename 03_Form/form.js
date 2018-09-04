@@ -44,12 +44,15 @@ export class Form {
                 return item.value
             } */
         
+        let r = ''    
         aTurnos.forEach(    // <--Forma moderna en vez de usar for
             item => {
                 if (item.checked) {
-                    return item.value
+                    r = item.value
+
                 }
             })
+            return r
     }
 }
 
