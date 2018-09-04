@@ -83,7 +83,7 @@ export class Form {
             value :  curso[curso.selectedIndex].value,
             text :  curso[curso.selectedIndex].textContent
         }
-        return 
+        return oDato
     }
 
     setAficiones() {
