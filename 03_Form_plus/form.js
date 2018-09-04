@@ -1,29 +1,18 @@
+import { FormularioModel} from './model.js'
 export class Form {
     constructor() {
         this.domForm = document.querySelector('form')
-        this.data = {
-            opciones : {
-                conditions: '',
-                turn: '',
-                curse: ''
-            },
-            user : { 
-                name: '', 
-                f_name: ''},
-            email: '',
-            passw : '',
-            coments : '',
-            aficiones : []
-        }
+        this.data = new FormularioModel()
         this.domForm.addEventListener('submit',
             this.enviar.bind(this)
         ) 
+        console.log(this.data)
     }
     
     enviar(oEv) {
         oEv.preventDefault()
         this.data.user.name = document.querySelector('#nombre').value
-        //this.data.user.name = this.domForm.elements.nombre.value  <--- A traves de elements para acceder a los elementos del formulario
+        //this.data.user.name = this.domForm.elements.nombre.value
         this.data.user.f_name = document.querySelector('#apellido').value
         this.data.email = document.querySelector('#correo').value
         this.data.passw = document.querySelector('#passw').value
@@ -36,35 +25,32 @@ export class Form {
         //console.dir(this.domForm)
         
     }
-    setTurno(){
-        //Ambas nos devuelven un array de datos <---
+
+    setTurno() {
         // let aTurnos = document.getElementsByName('turno')
         let aTurnos = document.querySelectorAll('[name="turno"]')
-         for (let i = 0; i < aTurnos.length; i++) {
-            const item = aTurnos[i]; //item en cada vuelta es mañana 0, tarde 1, noche 2. Es un iterador
-            if(item.checked){
+        for (let i = 0; i < aTurnos.length; i++) {
+            const item = aTurnos[i];
+            if (item.checked) {
                 return item.value
-            } 
+            }
+        }
         
-        //let r = ''  <--- lo malo de este modo es que da vueltas hasta el final aunque el checked sea la primera
-        //aTurnos.forEach(     <--Forma moderna en vez de usar for
-        //aTurnos.some( <-- some en vez de forEach para que no te la vuelta entera
         /* let r = ''
 
         let aDatos = []
         aTurnos.forEach(
             item => aDatos.push(item)
-        )   
+        )
         aDatos.some(    
-                (item, i) => {
-                    console.log("Vuelta", i+1)
-                    if (item.checked) {
-                        r = item.value
-                        return true
-                    }
-                })
-            return r */
-        }
+            (item, i) => {
+                console.log("Vuelta", i+1)
+                if (item.checked) {
+                    r = item.value
+                    return true
+                }
+            })
+        return r */
     }
 
      /* enviar(oEv) {
@@ -79,11 +65,11 @@ export class Form {
         const curso = document.querySelector('#curso')
         console.dir(curso.selectedIndex)
         console.dir(curso[curso.selectedIndex])
-        const aDato = {
+        const oDato = {
             value :  curso[curso.selectedIndex].value,
             text :  curso[curso.selectedIndex].textContent
         }
-        return 
+        return oDato
     }
 
     setAficiones() {
