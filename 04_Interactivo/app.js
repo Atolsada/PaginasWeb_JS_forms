@@ -43,9 +43,10 @@ export class App {
         let html = ''
         aDatos.forEach( (item, i) => {
             if( i === selected) {
-
+                html += `<option value="${item.value}" selected>
+                ${item.label}</option>`
             } else {
-                html += `<option value="${item.value}"selected>
+                html += `<option value="${item.value}">
                         ${item.label}</option>`  
             }
         })
@@ -75,7 +76,7 @@ export class App {
     }
         
     enviar(oEv) {
-        //oEv.preventDefault()
+        oEv.preventDefault()
         const data = '?genero=' + 
         this.dom.slGenero[this.dom.slGenero.selectedIndex].value
         + '&autor=' +
@@ -83,7 +84,7 @@ export class App {
         console.log(data)
     }
 
-    /* enviarRaro(){
+    /* enviarRaro() {
         this.dom.formFinal.submit()
     } */
 }
