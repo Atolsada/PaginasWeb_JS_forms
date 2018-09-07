@@ -1,13 +1,21 @@
 function main() {
-    let inNombre = document.querySelector('#nombre')
-    let inApellido = document.querySelector('#apellido')
+    //let inNombre = document.querySelector('#nombre')
+    //let inApellido = document.querySelector('#apellido')
+
+    //aInputs para que se agrupen inNombre y inApellido
+    let aInputs = document.querySelectorAll('.val')
+
     let btnEnviar = document.querySelector('#enviar')
     let formForm1 = document.querySelector('#form1')
 
     btnEnviar.addEventListener('click', preEnviar)  //evento click por que es un boton 
     formForm1.addEventListener('submit', enviar)
-    inNombre.addEventListener('input', validaText) //se usa como manejadora de evento(*)
-    inApellido.addEventListener('input', validaText) //se usa como manejadora de evento(*)
+    //inNombre.addEventListener('input', validaText) //se usa como manejadora de evento(*)
+    //inApellido.addEventListener('input', validaText) //se usa como manejadora de evento(*)
+
+    aInputs.forEach( item => {
+        item.addEventListener('input', validaText)
+    })
 
     function preEnviar () {
         console.log("Pulsado click")
@@ -34,8 +42,8 @@ function main() {
     }
 
     function enviar(oEv) {
-        if(!validaText({target: inNombre}) 
-        || !validaText({target: inApellido}) ) { //se invoca de forma normal(*)
+        if(!validaText({target: aInputs[0]}) 
+        || !validaText({target: aInputs[1]}) ) { //se invoca de forma normal(*)
             console.log("No valido") 
             oEv.preventDefault()//Para que se vea por consola sin que se envie
             //console.log()
