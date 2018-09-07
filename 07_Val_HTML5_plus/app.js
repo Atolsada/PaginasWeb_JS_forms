@@ -1,6 +1,4 @@
 function main() {
-
-    let validForm = true
     let inNombre = document.querySelector('#nombre')
     let inApellido = document.querySelector('#apellido')
     let btnEnviar = document.querySelector('#enviar')
@@ -8,32 +6,38 @@ function main() {
 
     btnEnviar.addEventListener('click', preEnviar)  //evento click por que es un boton 
     formForm1.addEventListener('submit', enviar)
-    inNombre.addEventListener('input', validaNombre)
+    inNombre.addEventListener('input', validaText) //se usa como manejadora de evento(*)
+    inApellido.addEventListener('input', validaText) //se usa como manejadora de evento(*)
 
     function preEnviar () {
         console.log("Pulsado click")
         console.dir(formForm1)
     }
 
-    function validaNombre() {
+    function validaText(oEv) {
+        let element = oEv.target
+        console.dir(element)
         let validControl = true
-        if (!inNombre.checkValidity()) {
-            inNombre.nextElementSibling.innerHTML = 
-                '<span class="h4">El nombre es imprescindible</span>' /* es correcto semanticamente con bootstrap */
+        if (!element.checkValidity()) {
+            element.nextElementSibling.innerHTML = 
+                `<span class="h6">El ${element.id} es imprescindible</span>` /* es correcto semanticamente con bootstrap */
                 //inNombre.validationMessage
             validControl = false
+            element.nextElementSibling.classList.remove('hide')
         } else {
-            inNombre.nextElementSibling.innerHTML = ''
-            validControl = true
-        }
-        return validControl //se pone return para que la funcion que es void se haga boolean ya que al validar es true o false
+            element.nextElementSibling.innerHTML = ''
+            validControl = true  //se pone return para que la funcion que es void se haga boolean ya que al validar es true o false
+            element.nextElementSibling.classList.add('hide')
+        }   
+        
+        return validControl 
     }
 
     function enviar(oEv) {
-        
-        if(!validaNombre()) {
+        if(!validaText({target: inNombre}) 
+        || !validaText({target: inApellido}) ) { //se invoca de forma normal(*)
             console.log("No valido") 
-             oEv.preventDefault()//Para que se vea por consola sin que se envie
+            oEv.preventDefault()//Para que se vea por consola sin que se envie
             //console.log()
             //console.log(inNombre.validity)
             //console.log(inNombre.validationMessage)
@@ -42,6 +46,7 @@ function main() {
             oEv.preventDefault()
             console.log("Enviando")
         }
+        
     }
 }
 
