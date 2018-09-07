@@ -4,13 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script src="./app.js"></script>
+    <link rel="stylesheet" href="./style.css">
     <title>Document</title>
-    <link rel="stylesheet" href="../node_modules//bootstrap//dist/css/bootstrap.css">
 </head>
 <body>
     <div class="container">
         <div class="row">
-            <form action="" class="col-6">
+            <form id="form1" action="" class="col-6" novalidate> <!-- Si ponemos novalidate no valida lo enviado: form id="form1" action="" class="col-6" novalidate (TAMBIEN ES NO EM MUESTRES TUS MENSAJES, DEJA QUE LO HAGA YO-->
                 <div class="form-group">
                     <label for="nombre">Nombre</label>
                     <input type="text" required
@@ -27,7 +29,7 @@
                   <label for="correo">Correo</label>
                   <input type="email" required
                     class="form-control" name="correo" id="correo" aria-describedby="emailHelpId" placeholder="">
-                  <small id="emailHelpId" class="form-text text-muted">Help text</small>
+                  <small id="emailHelpId" class="form-text text-muted"></small>
                 </div>
                 <div class="form-group">
                   <label for="">Telefono</label>
