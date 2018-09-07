@@ -22,6 +22,7 @@ function main() {
         console.dir(formForm1)
     }
 
+    
     function validaText(oEv) {
         let element = oEv.target
         console.dir(element)
