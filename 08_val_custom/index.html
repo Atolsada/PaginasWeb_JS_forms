@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="./app.js"></script>
     <title>Custom Validiti</title>
     <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
 </head>
@@ -13,7 +14,7 @@
             <form action="" class="col">
                 <div class="form-group">
                     <label for="user">Nombre de usuario</label>
-                    <input type="text"
+                    <input type="text" required
                     class="form-control" name="user" id="user" aria-describedby="helpId" placeholder="">
                     <small id="helpId" class="form-text text-muted"></small>
                 </div>
@@ -23,7 +24,7 @@
                     class="form-control" name="dni" id="dni" aria-describedby="helpId" placeholder="">
                     <small id="helpId" class="form-text text-muted"></small>
                 </div>
-                <button type="summit" class="btn btn-warning">Enviar</button>
+                <button id="btnEnviar" type="summit" class="btn btn-warning">Enviar</button>
             </form>     
         </div>
     </div>
