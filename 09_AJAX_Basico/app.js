@@ -17,7 +17,7 @@ function main () {
 
         //ajax.open() prepara la peticion(abre el canal de comunicaciones) get-post-put-delete
         //ajax.send() lanza la operacion
-        ajax.open('GET', 'FILE')
+        ajax.open('GET', 'datos.json')
         ajax.send(null)
 
         function mostrarDatos(){
@@ -26,7 +26,7 @@ function main () {
             if(ajax.readyState === 4){
                 console.log(ajax.status) //200 bien 404 mal
                 if(ajax.status === 200){
-                    console.log(ajax.responseText)
+                    console.log(ajax.responseText) //responseText es un string por que ajax solo se envian strings
                     document.querySelector('#output')
                     .innerHTML = ajax.responseText
                 } else {
