@@ -1,58 +1,60 @@
-import { FILE } from './config.js'
+import { DATOS, JSON } from './config.js'
+import { AjaxService } from './ajax-service.js';
 
-function main () {
-    document.querySelector('#btnDatos')
-    .addEventListener('click', pedirDatos)
-            
-    /* document.querySelector('#btnDatos')
-    .onclick = pedirDatos */
+export class App {
+    constructor () {
+        //this.ndBtnDatos = document.querySelector('#btnDatos')
+        //this.ndBtnJson = document.querySelector('#btnJson')
+        //this.btnError = document.querySelector('#btnError')
+        this.aBotones = document.querySelectorAll('button')
+        this.ndOutput = document.querySelector('#output')
+        this.ndError = document.querySelector('#error')
+        
+        /* this.ndBtnDatos.addEventListener('click', 
+            this.pedirDatos.bind(this))
+        this.ndBtnJson.addEventListener('click', 
+            this.pedirDatos.bind(this))
+        this.btnError.addEventListener('click', 
+            this.pedirDatos.bind(this)) */
+        
+        this.aBotones.forEach( item => 
+            item.addEventListener('click', 
+                this.pedirDatos.bind(this)))
+    }
 
-    function pedirDatos() {
-        //console.log('Pidiendo datos')
-        console.dir(FILE)
-    
-        let ajax = new XMLHttpRequest()
-        console.dir(ajax)
-        ajax.onreadystatechange = mostrarDatos
+    pedirDatos(oEv) {
+        switch (oEv.target.id) {
+            case 'btnDatos':
+                new AjaxService('GET', DATOS, 'txt',  
+                    this.mostrarDatos.bind(this))
+                break;
+            case 'btnJson':
+                new AjaxService('GET', JSON , 'json', 
+                    this.mostrarDatos.bind(this))
+                break;  
+            case 'btnError':  
+                new AjaxService('GET', 'error', '', 
+                    this.mostrarError.bind(this))
+            break;                   
+        }
+    } 
 
-        //ajax.open() prepara la peticion(abre el canal de comunicaciones) get-post-put-delete
-        //ajax.send() lanza la operacion
-        ajax.open('GET', 'datos.json')
-        ajax.send(null)
-
-        function mostrarDatos(){
-            console.log(ajax.readyState) //4
-
-            let oDatos
-            let html
-
-            if(ajax.readyState === 4){
-                console.log(ajax.status) //200 bien 404 mal
-                if(ajax.status === 200){
-                    oDatos = JSON.parse(ajax.responseText)//responseText es un string por que ajax solo se envian strings
-                    console.dir(oDatos) 
-                    html = '<ul>'
-
-                    for (const key in oDatos) {
-                        if (oDatos.hasOwnProperty(key)) {
-                            const value = oDatos[key];
-                            html += `<li>${key} : ${value}</li>`
-                        }
-                    }
-                    html += '</ul>'
-
-                    document.querySelector('#output')
-                    .innerHTML = ajax.responseText
-                } else {
-                    document.querySelector('#output')
-                    innerHTML = ajax.statusText + ' : ' +
-                    ajax.statusText
-                }
-
+    mostrarDatos(oDatos) {
+        let html
+        html = '<ul>'
+        for (const key in oDatos) {
+            if (oDatos.hasOwnProperty(key)) {
+                const value = oDatos[key];
+                html += `<li>${key} : ${value}</li>`    
             }
         }
+        html += '</ul>'
+        this.ndOutput.innerHTML = html
+        this.ndError.innerHTML = ''
+    }
 
+    mostrarError(oDatos) {
+        this.ndOutput.innerHTML = ''
+        this.ndError.innerHTML = oDatos.error
     }
 }
-
-document.addEventListener('DOMContentLoaded', main)
