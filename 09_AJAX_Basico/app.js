@@ -23,10 +23,24 @@ function main () {
         function mostrarDatos(){
             console.log(ajax.readyState) //4
 
+            let oDatos
+            let html
+
             if(ajax.readyState === 4){
                 console.log(ajax.status) //200 bien 404 mal
                 if(ajax.status === 200){
-                    console.log(ajax.responseText) //responseText es un string por que ajax solo se envian strings
+                    oDatos = JSON.parse(ajax.responseText)//responseText es un string por que ajax solo se envian strings
+                    console.dir(oDatos) 
+                    html = '<ul>'
+
+                    for (const key in oDatos) {
+                        if (oDatos.hasOwnProperty(key)) {
+                            const value = oDatos[key];
+                            html += `<li>${key} : ${value}</li>`
+                        }
+                    }
+                    html += '</ul>'
+
                     document.querySelector('#output')
                     .innerHTML = ajax.responseText
                 } else {
