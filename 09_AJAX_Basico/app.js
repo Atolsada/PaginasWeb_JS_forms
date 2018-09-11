@@ -17,20 +17,26 @@ function main () {
 
         //ajax.open() prepara la peticion(abre el canal de comunicaciones) get-post-put-delete
         //ajax.send() lanza la operacion
-        ajax.open('GET', FILE)
+        ajax.open('GET', 'FILE')
         ajax.send(null)
 
         function mostrarDatos(){
             console.log(ajax.readyState) //4
 
-            if(ajax.readyState === 4)
+            if(ajax.readyState === 4){
                 console.log(ajax.status) //200 bien 404 mal
-                if(ajax.status === 200)
+                if(ajax.status === 200){
                     console.log(ajax.responseText)
                     document.querySelector('#output')
                     .innerHTML = ajax.responseText
-        }
+                } else {
+                    document.querySelector('#output')
+                    innerHTML = ajax.statusText + ' : ' +
+                    ajax.statusText
+                }
 
+            }
+        }
 
     }
 }
