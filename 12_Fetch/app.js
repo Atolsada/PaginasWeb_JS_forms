@@ -77,13 +77,12 @@ export class App {
         html += '</ul>'
         this.ndOutput.innerHTML = html
         this.ndError.innerHTML = ''
-
-
     }
 
     mostrarError(oDatos) {
         this.ndOutput.innerHTML = ''
-        this.ndError.innerHTML = oDatos.error
+        /* this.ndError.innerHTML = oDatos.error */
+        this.ndError.innerHTML = error
         let error = oDatos.status + ' : ' + oDatos.statusText
     }
 }
