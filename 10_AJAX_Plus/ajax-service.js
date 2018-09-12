@@ -8,8 +8,10 @@ export class AjaxService {
         this.type = type
         this.callBack = callBack
         console.dir(this.ajax)
-        this.ajax.onreadystatechange = 
-            this.getDatos.bind(this)
+        //this.ajax.onreadystatechange = 
+        //    this.getDatos.bind(this)
+        this.ajax.addEventListener('readystatechange',
+            this.getDatos.bind(this))
 
         this.ajax.open(metodo,url)
         this.ajax.send(null)
