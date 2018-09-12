@@ -1,5 +1,4 @@
 import { DATOS, JSON } from './config.js'
-import { AjaxService } from './ajax-service.js';
 
 export class App {
     constructor () {
@@ -25,16 +24,43 @@ export class App {
     pedirDatos(oEv) {
         switch (oEv.target.id) {
             case 'btnDatos':
-                new AjaxService('GET', DATOS, 'txt',  
-                    this.mostrarDatos.bind(this))
+                fetch(DATOS,{method: 'GET'}).then(
+                    (response) => {
+                        console.dir(response)
+                        return response.text()
+                    } 
+                ).then(
+                    (response) => {
+                        console.log(response)
+                        this.mostrarDatos({respuesta: response})
+                    }
+                )
+                /* new AjaxService('GET', DATOS, 'txt',  
+                    this.mostrarDatos.bind(this)) */
                 break;
             case 'btnJson':
-                new AjaxService('GET', JSON , 'json', 
-                    this.mostrarDatos.bind(this))
+                    fetch(JSON, {method: 'GET'}).then(
+                        (response) => {
+                            return response.json()
+                        }
+                    ).then(
+                        (data) => {
+                            console.dir(data)
+                            this.mostrarDatos(data)
+                        }
+                    )
+                /* new AjaxService('GET', JSON , 'json', 
+                    this.mostrarDatos.bind(this)) */
                 break;  
-            case 'btnError':  
-                new AjaxService('GET', 'error', '', 
-                    this.mostrarError.bind(this))
+            case 'btnError':
+                        fetch('error', {method: 'GET'}).then(
+                            (response) => {
+                                console.log(response)
+                                this.mostrarError(response)
+                            }
+                        )
+                /* new AjaxService('GET', 'error', '', 
+                    this.mostrarError.bind(this)) */
             break;                   
         }
     } 
@@ -51,10 +77,13 @@ export class App {
         html += '</ul>'
         this.ndOutput.innerHTML = html
         this.ndError.innerHTML = ''
+
+
     }
 
     mostrarError(oDatos) {
         this.ndOutput.innerHTML = ''
         this.ndError.innerHTML = oDatos.error
+        let error = oDatos.status + ' : ' + oDatos.statusText
     }
 }
