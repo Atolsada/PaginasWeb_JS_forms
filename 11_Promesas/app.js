@@ -1,14 +1,22 @@
 function main() {
 
     function asincrono (callback) {
-        setTimeout(callback,3000)
+        setTimeout(() => { 
+            const ms = 'Ha pasado un rato'
+            callback(ms)
+        },3000)
     }
 
-    function pintar() {
-        console.log('Ha pasado un rato')
+    function pintar(msg) {
+        console.log(msg)
+    }
+
+    function addDOM(msg) {
+        document.querySelector('#output').innerHTML = msg
     }
     
     asincrono(pintar)
+    asincrono(addDOM)
     console.log('Ultima linea')
 }
 
