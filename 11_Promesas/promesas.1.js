@@ -7,20 +7,14 @@ function main() {
         )   
     }
 
-    /* function pintar(msg) {
+    function pintar(msg) {
         console.log(msg)
     }
     
     promesas()
-    .then(pintar */
+    .then( pintar('Ha pasado un rato')
+    )
+    console.log('Ultima linea')
+}
 
-        promesas().then(
-            (response) => { console.log(response)}
-        )
-    
-         console.log('Ultima linea')
-    
-    
-    }
-    
-    document.addEventListener('DOMContentLoaded', main)
+document.addEventListener('DOMContentLoaded', main)
