@@ -1,10 +1,11 @@
 function main() {
 
-    function promesas () {
+    function promesas() {
         return new Promise(
-            (resolve) => { //resolve puede mandar true y ademas DOMSettableTokenList(la frase)
-                setTimeout(() => resolve('Ha pasado un ratejo'), 3000)}
-        )   
+            (resolve) => {
+                setTimeout (() => resolve('Ha pasado un rato'), 3000)
+            }
+        )
     }
 
     /* function pintar(msg) {
@@ -14,13 +15,13 @@ function main() {
     promesas()
     .then(pintar */
 
-        promesas().then(
-            (response) => { console.log(response)}
-        )
-    
-         console.log('Ultima linea')
-    
-    
-    }
-    
-    document.addEventListener('DOMContentLoaded', main)
+    promesas().then(
+        (response) => { console.log(response)}
+    )
+
+     console.log('Ultima linea')
+
+
+}
+
+document.addEventListener('DOMContentLoaded', main)
