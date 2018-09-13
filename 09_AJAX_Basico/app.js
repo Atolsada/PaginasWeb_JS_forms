@@ -56,3 +56,9 @@ function main () {
 }
 
 document.addEventListener('DOMContentLoaded', main)
+
+
+ /* 
+ I DONT UNDERSTAND!!!!
+app.js:5 Uncaught TypeError: Cannot read property 'addEventListener' of null
+    at HTMLDocument.main (app.js:5) */
