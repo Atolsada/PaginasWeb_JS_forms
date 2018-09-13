@@ -54,7 +54,7 @@ export class App {
     }
 
     mostrarError(oDatos) {
-        this.ndOutput.innerHTML = ''
         this.ndError.innerHTML = oDatos.error
+        this.ndOutput.innerHTML = ''
     }
 }

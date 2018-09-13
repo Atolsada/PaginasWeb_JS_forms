@@ -13,7 +13,7 @@ export class AjaxService {
         this.ajax.addEventListener('readystatechange',
             this.getDatos.bind(this))
 
-        this.ajax.open(metodo,url, false, 'pepe','1234')
+        this.ajax.open(metodo,url, false)
         this.ajax.setRequestHeader('Accept', 'text/txt')
         this.ajax.send(null)
     }
@@ -22,7 +22,7 @@ export class AjaxService {
         console.log(this.ajax.readyState)
         if(this.ajax.readyState === 4) {
             console.log(this.ajax.status)
-            console.dir(this.ajax.getAllResponseHeader())
+            console.dir(this.ajax.getAllResponseHeaders())
             if(this.ajax.status === 200) {
                 if (this.type === 'json') {
                     this.oDatos = 

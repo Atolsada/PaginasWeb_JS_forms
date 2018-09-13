@@ -3,16 +3,13 @@ p.output {
     min-height: 3rem;
     background-color: bisque;
 }
-
-main{
+main {
     min-height: 70vh;
 }
-
-footer{
+footer {
     display: fixed;
     left: 0px;
     bottom: 0px;
     right: 0px;
     border-top: 1px solid brown;
 }
-
