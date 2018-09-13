@@ -5,7 +5,7 @@ function asincP () {
         (resolve, reject) =>{
             setTimeout( 
                 () => {
-                    let number = Math.random()
+                    let number = Math.random() //<--- te da un numero aleatorio entre 0 y 1
                     if (number < 0.7) {
                         // correcto
                         // return true
