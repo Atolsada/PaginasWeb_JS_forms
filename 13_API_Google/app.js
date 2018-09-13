@@ -49,7 +49,7 @@ export class App{
             }
             html += `<dt>${item.titulo}</dt>`
             html += `<dt>${autor}</dt>`
-        })
+        });
         html+= '</dl>'
 
         this.nOuput.innerHTML = html
