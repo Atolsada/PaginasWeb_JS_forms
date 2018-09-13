@@ -42,7 +42,7 @@ function main () {
                     html += '</ul>'
 
                     document.querySelector('#output')
-                    .innerHTML = ajax.responseText
+                    .innerHTML = html
                 } else {
                     document.querySelector('#output')
                     innerHTML = ajax.statusText + ' : ' +
