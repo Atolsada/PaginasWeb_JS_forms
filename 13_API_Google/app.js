@@ -27,24 +27,35 @@ export class App{
     }
     mostrar(data){
         let aLibros
-        let html = '<ul>'
-        console.log(data)
+        let html = '<dl>'
+        console.log(data.items)
         aLibros = data.items.map(
-            item => {return item.volumeInfo.title}
+            item => {
+                return{
+                    autores: item.volumeInfo.authors,
+                    titulo: item.volumeInfo.title} 
+            }
         )
+        console.log(aLibros)
 
         /* data.items.forEach(item => {
             console.log(item.volumeInfo.title)
         }); */
 
         aLibros.forEach(item => {
-            html += `<li>${item}</li>`
+            let autor = ''
+            if (item.autores){
+                autor =item.autore.join(', ')
+            }
+            html += `<dt>${item.titulo}</dt>`
+            html += `<dt>${autor}</dt>`
         })
-        html+= '</ul>'
+        html+= '</dl>'
 
         this.nOuput.innerHTML = html
         this.nKey.value = ''
 
         //console.dir(aLibros)
+        
     }
 }
