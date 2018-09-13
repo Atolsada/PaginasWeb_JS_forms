@@ -2,8 +2,10 @@ function main() {
 
     function promesas() { //<--- Este es el burguer (new promise, el NEW instancia)
         return new Promise( //<--- Este es el ticket de compra de la hamburguesa (suele encontrarse en las primeras lineas)
-            (resolve) => { 
+            (resolve, /* reject */) => { 
                 setTimeout (() => resolve('Ha pasado un rato'), 3000) //<--- Lo que tarda en hacerse la hamburguesa ('la hamburguesa')
+                /* setTimeout (() => reject('Error'), 3000) */
+                //(resolve, reject) si se que nunca va a haver error no ponemos reject
             }
         )
     }
