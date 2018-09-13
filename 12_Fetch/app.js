@@ -24,34 +24,51 @@ export class App {
     pedirDatos(oEv) {
         switch (oEv.target.id) {
             case 'btnDatos':
-                fetch(DATOS, {method:'GET'}).then(
+                fetch(DATOS,{method: 'GET'}).then(
                     (response) => {
                         console.dir(response)
                         return response.text()
-                    }
+                    } 
                 ).then(
-                    (response) => { 
+                    (response) => {
                         console.log(response)
                         this.mostrarDatos({respuesta: response})
                     }
                 )
+                /* new AjaxService('GET', DATOS, 'txt',  
+                    this.mostrarDatos.bind(this)) */
                 break;
             case 'btnJson':
-                fetch(JSON, {method: 'GET'}).then(
-                    (response) => { return response.json()}
-                ).then(
-                    (data) => {this.mostrarDatos(data)}
-                )
+                    fetch(JSON, {method: 'GET'}).then(
+                        (response) => {
+                            return response.json()
+                        }
+                    ).then(
+                        (data) => {
+                            console.dir(data)
+                            this.mostrarDatos(data)
+                        }
+                    )
+                /* new AjaxService('GET', JSON , 'json', 
+                    this.mostrarDatos.bind(this)) */
                 break;  
-            case 'btnError':  
-                fetch('error', {method: 'GET'}).then(
-                    (response) => {
-                        console.log(response)
-                        this.mostrarError(response) 
-                    }
-                )
+            case 'btnError':
+                        fetch('error', {method: 'GET'}).then(
+                            (response) => {
+                                console.log(response)
+                                this.mostrarError(response)
+                            }
+                        )
+                /* new AjaxService('GET', 'error', '', 
+                    this.mostrarError.bind(this)) */
             break;                   
         }
+
+        fetch('datos','json', {method: 'GET'}).then(
+            (response)=>{return response.json()}
+        ).then(
+            (oData)=>{console.dir(data)}
+        )
     } 
 
     mostrarDatos(oDatos) {
@@ -69,10 +86,9 @@ export class App {
     }
 
     mostrarError(oDatos) {
-        let error = oDatos.status + ' : ' + oDatos.statusText
-        this.ndError.innerHTML = error
         this.ndOutput.innerHTML = ''
+        /* this.ndError.innerHTML = oDatos.error */
+        this.ndError.innerHTML = error
+        let error = oDatos.status + ' : ' + oDatos.statusText
     }
 }
-
-
