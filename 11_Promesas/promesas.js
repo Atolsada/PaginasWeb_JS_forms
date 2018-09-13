@@ -28,8 +28,17 @@ function main() {
         })
 
     }
-
+    /* CONTINUACION DE EJEMPLO */
     
+    /*
+    promesas2().then(
+        () =>{}, //<--- aqui va la positiva (te dan la hamburguesa)
+        () =>{}, //<--- aqui va la negativa (no te dan la hamburguesa)
+    ).catch() //Se puede poner catch solo en al positiva y fuera la negativa pero esta bien ahcerlo así
+    */
+
+
+
     /* function pintar(msg) {
         console.log(msg)
     }
