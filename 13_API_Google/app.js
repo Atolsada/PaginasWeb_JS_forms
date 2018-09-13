@@ -26,10 +26,10 @@ export class App{
         }
     }
     mostrar(data){
-        let aTitulos
+        let aLibros
         let html = '<ul>'
         console.log(data)
-        aTitulos = data.items.map(
+        aLibros = data.items.map(
             item => {return item.volumeInfo.title}
         )
 
@@ -37,7 +37,7 @@ export class App{
             console.log(item.volumeInfo.title)
         }); */
 
-        aTitulos.forEach(item => {
+        aLibros.forEach(item => {
             html += `<li>${item}</li>`
         })
         html+= '</ul>'
@@ -45,6 +45,6 @@ export class App{
         this.nOuput.innerHTML = html
         this.nKey.value = ''
 
-        //console.dir(aTitulos)
+        //console.dir(aLibros)
     }
 }
