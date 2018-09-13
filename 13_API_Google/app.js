@@ -45,10 +45,10 @@ export class App{
         aLibros.forEach(item => {
             let autor = ''
             if (item.autores){
-                autor =item.autore.join(', ')
+                autor = item.autores.join(', ')
             }
             html += `<dt>${item.titulo}</dt>`
-            html += `<dt>${autor}</dt>`
+            html += `<dd>${autor}</dd>`
         });
         html+= '</dl>'
 
