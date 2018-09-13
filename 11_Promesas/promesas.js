@@ -8,6 +8,9 @@ function main() {
         )
     }
 
+
+    /* EJEMPLO POR SI NO QUEDA CLARO */
+
     function promesa2() { //return new Promise( (resolve, reject) => {}) funciones - resolve resuelve, reject por si algo salio mal
         return new Promise( (resolve, reject) => {
             //TO DO
@@ -26,6 +29,7 @@ function main() {
 
     }
 
+    
     /* function pintar(msg) {
         console.log(msg)
     }
