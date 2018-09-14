@@ -32,8 +32,10 @@ export class App{
         aLibros = data.items.map(
             item => {
                 return{
-                    autores: item.volumeInfo.authors,
-                    titulo: item.volumeInfo.title} 
+                    autores: item.volumeInfo.authors, //¿Para qué es el volumeInfo?
+                    titulo: item.volumeInfo.title,
+                    icono: item.volumeInfo.imageLinks ?
+                        item.volumeInfo.imageLinks.smallThumbnail :''}
             }
         )
         console.log(aLibros)
@@ -49,6 +51,7 @@ export class App{
             }
             html += `<dt>${item.titulo}</dt>`
             html += `<dd>${autor}</dd>`
+            html += `<img src="${item.icono}"></dd>`
         });
         html+= '</dl>'
 
