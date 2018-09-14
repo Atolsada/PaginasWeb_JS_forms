@@ -1,3 +1,5 @@
+function main (){
+
 let url = 'datos.json'
 let method = 'GET'
 
@@ -19,35 +21,44 @@ let method = 'GET'
 
 
 url = 'datosxx.json'
-try {
-    fetch(url, {method: method} )
-.then( response => {
-    if (response.ok){
-        console.table(response)
-        return response.json()
-    }else{
-        let msg =response.status + ' : ' + response.statusText
-        throw new Error(msg)
+    document.querySelector('#btnEnviar')
+        .addEventListener('click', enviar)
+
+    function enviar() {
+        fetch(url, {method: method} )
+        .then( response => {
+            if (response.ok) {
+                return response.json() 
+            } else {
+                let msg = response.status + ' : ' + response.statusText 
+                throw msg
+            }
+        })
+        .then( data => mostrarDatos(data) )
+        .catch ( error => {
+             mostrarError(error)
+        })   
+        
     }
-    //console.log(response)
-    //console.dir(response)
-    //return response.json() se ve en consola, body - false y el return gestiona el body
-    //Hay que meterlo en if para que funcione el return
-}).then( data => mostrarDatos(data) )
-}catch{
-    mostrarError(error)
+
+    function mostrarError(error) {
+        /* document.querySelector('#output').innerHTML = 
+            error */
+         location.assign('error.html?e='+error)
+    }
+    
+    function mostrarDatos(data) {
+        console.log("Mostrar datos")
+        console.log(data)
+        document.querySelector('#output').innerHTML += 
+            JSON.stringify(data)
+    }
 }
 
-function mostrarError(status, text){
-    document.querySelector('#output').innerHTML =
-    status + ':' + text
-}
+document.addEventListener('DOMContentLoaded', main)
 
-function mostrarDatos(data) {
-    console.log(data)
-    document.querySelector('#output').innerHTML +=
-    JSON.stringify(data)
-}
+
+
 
 
 
@@ -64,13 +75,11 @@ function hacerAlgo() {
 
 
 
-
-
-
 try {
     hacerAlgo()
    
 } catch (error) {
+   
 }
 try {
   hacer_otra_cosa()  
@@ -78,4 +87,5 @@ try {
     
 }
  
+
 
