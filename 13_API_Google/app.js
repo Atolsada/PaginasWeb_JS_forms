@@ -34,8 +34,8 @@ export class App{
                 return{
                     autores: item.volumeInfo.authors, //¿Para qué es el volumeInfo?
                     titulo: item.volumeInfo.title,
-                    icono: item.volumeInfo.imageLinks ?
-                        item.volumeInfo.imageLinks.smallThumbnail :''}
+                    icono: item.volumeInfo.imageLinks ? // Existe imageLinks?
+                        item.volumeInfo.imageLinks.smallThumbnail :''} //Pues muestrame smallThumbnail 
             }
         )
         console.log(aLibros)
