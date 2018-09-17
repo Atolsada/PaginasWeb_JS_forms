@@ -1,5 +1,5 @@
-import { Index } from ".";
+import { Index } from "./index.js";
 
-document.addEventListener('DOMContentLoaded'), ()=> {
-    new Index
-}
+document.addEventListener('DOMContentLoaded', () => {
+    new Index()
+})

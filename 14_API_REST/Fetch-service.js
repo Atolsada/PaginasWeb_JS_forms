@@ -12,8 +12,9 @@ export class FetchService {
             fetch(this.config.url, {method: this.config.method})
             .then(
                 (response) => {
-                    if (response.status == 200) {
-                        return response.text()
+                    console.log(response)
+                    if (response.status === 200) {
+                        return response.json()
                     } else {
                         reject( 
                             { status : response.status,
@@ -22,10 +23,9 @@ export class FetchService {
                     }
                 }
             ).then(
-                (data) => { resolve( {text :data } )}
+                (data) => { resolve( data )}
             )
-        })        
+        }
+        )        
     }
 }
-
-
