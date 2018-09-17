@@ -1,0 +1,15 @@
+{
+    "articulos": [
+        { "id": 1, "title": "Alejandro", "author": "Todos los lunes" },
+        { "id": 2, "title": "El Pepe", "author": "Pepe Perez" }
+      ],
+      "comments": [
+        { "id": 1, "body": "PepePerez Boracay", "postId": 1 }
+      ],
+      "profile": { "name": "typicode" },
+      "tareas": [
+        {"name":"Clase curso Páginas", "isComplete": false},
+        {"name":"Reunion de trabajo", "isComplete": 23}
+      ]
+    }
+    
