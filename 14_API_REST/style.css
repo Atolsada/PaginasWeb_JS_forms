@@ -2,3 +2,6 @@ body{
     margin: 2rem 3rem,
 
 }
+ul {
+    list-style: none;
+}

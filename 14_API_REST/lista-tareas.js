@@ -1,11 +1,12 @@
 import { FetchService } from "./fetch-service.js";
+import { Tarea } from "./tarea.js";
 
 export class ListaTareas {
     constructor() {
         this.uRL = 'http://localhost:3000/tareas'
         this.aTareas = []
+        this.nodoListaTareas = document.querySelector('#lista')
         this.getTareas()
-        this.nodoListaTareas = document.querySelector(lista)
     }
 
     getTareas() {
@@ -14,17 +15,15 @@ export class ListaTareas {
             .then( data => {
                 this.aTareas = data
                 this.renderLista()
-            })
+            },
+            (error) =>{console.dir(error)}
+            )
     }
     
     renderLista() {
         let html = ''
-        //console.dir(this.aTareas)
-
         this.aTareas.forEach( 
-            item => 
-                //html += `<li> ${item.name} </li>`
-                new Tarea (item).renderTarea()
+            item => html += new Tarea(item).renderTarea()
         )
         this.nodoListaTareas.innerHTML = html
     }
