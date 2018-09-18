@@ -21,10 +21,16 @@ export class ListaTareas {
     }
     
     renderLista() {
-        let html = ''
+        /* let html = ''
         this.aTareas.forEach( 
             item => html += new Tarea(item).renderTarea()
         )
-        this.nodoListaTareas.innerHTML = html
+        this.nodoListaTareas.innerHTML = html */
+
+        this.aTareas.forEach( 
+            item => {
+             this.nodoListaTareas.appendChild(new Tarea(item).renderTarea())   
+            }
+        )
     }
 }
