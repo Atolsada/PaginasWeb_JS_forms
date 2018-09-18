@@ -24,12 +24,12 @@
   },
   "tareas": [
     {
-      "id": 1, "name" : "Clases curso Paginas",
-      "isComplete" : true
+      "name": "Clases curso Paginas",
+      "isComplete": true
     },
     {
-      "id": 2, "name" : "Entrevista de Trabajo",
-      "isComplete" : false
+      "name": "Entrevista de Trabajo",
+      "isComplete": false
     }
   ]
 }
