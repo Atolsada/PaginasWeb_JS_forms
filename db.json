@@ -1,9 +1,11 @@
 {
   "articulos": [
     {
-      "author": "Alejandro",
+      "author": {
+        "name": "Alejandro"
+      },
       "id": 2,
-      "title": "Todos los lunes"
+      "title": " Todos los lunes "
     },
     {
       "title": "Martes",
@@ -24,11 +26,25 @@
   },
   "tareas": [
     {
+      "id": 1,
       "name": "Clases curso Paginas",
       "isComplete": true
     },
     {
-      "name": "Entrevista de Trabajo",
+      "id": 2,
+      "name": "Reunion de trabajo",
+      "isComplete": false
+    }
+  ],
+  "tareas2": [
+    {
+      "id": 1,
+      "name": "Clases curso Paginas",
+      "isComplete": true
+    },
+    {
+      "id": 2,
+      "name": "Reunion de trabajo",
       "isComplete": false
     }
   ]
