@@ -13,7 +13,7 @@ export class ListaTareas {
         this.fetchService.send(this.uRL, {method: 'GET' })
             .then( data => {
                 this.aTareas = data
-                this.renderLista()
+                this.renderLista() 
             },
             error => {console.dir(error)}
             )
@@ -54,6 +54,19 @@ export class ListaTareas {
 
     checkTarea(oEv) {
         console.log(oEv.target.dataset.id)
+        console.log(oEv.target.checked)
+        let datos = {
+            isComplete : oEv.target.checked
+        }
+        let url = this.url + '/' + oEv.target.dataset.id
+        this.fetchService.send(url, {method:'PATCH',
+            body: JSON.stringify(datos)
+        }).then(
+            response => {
+                console.log(response)
+            },
+            error => console.log(error)
+        )
     }
 
     borrarTarea(oEv) {
