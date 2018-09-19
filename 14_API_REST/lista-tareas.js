@@ -4,8 +4,9 @@ import {  MENSAJES } from "./mensajes.js"
 export class ListaTareas {
     constructor() {
         this.nodoListaTareas = document.querySelector('#lista')
-        this.nodoBtnAdd.addEventListener('click', this.addTarea.bind(this))
+        this.nodoBtnAdd = document.querySelector('#btnAdd')
         this.nodoNewTarea = document.querySelector('#inTarea')
+        this.nodoBtnAdd.addEventListener('click', this.addTarea.bind(this))
         this.uRL = 'http://localhost:3000/tareas'
         this.aTareas = []
         this.fetchService = new FetchService()
@@ -16,6 +17,16 @@ export class ListaTareas {
         this.fetchService.send(this.uRL, {method: 'GET' })
             .then( data => {
                 this.aTareas = data
+                console.dir(this.aTareas)
+                this.aTareas = this.aTareas.filter(
+                    (item) => {
+                        console.log(item.name.indexOf('Aprender')) 
+                        if (item.name.indexOf('Aprender') >= 0 ) { return true} 
+                        else { return false }
+                    }
+                )
+                console.dir(this.aTareas)
+
                 this.renderLista()
             },
             error => {console.dir(error)}
@@ -53,12 +64,30 @@ export class ListaTareas {
         return htmlView
     }
 
-    addTarea(){
+    addTarea() {
         if (!this.nodoNewTarea.value) {return}
-        let body = {
+        let newTarea = {
             name: this.nodoNewTarea.value,
             isComplete: false
         }
+        this.nodoNewTarea.value = ''
+        let headers = new Headers()
+        headers.append("Content-Type", "application/json");
+        this.fetchService.send(this.uRL, {
+            method: 'POST', 
+            headers : headers,
+            body: JSON.stringify(newTarea)
+        }).then(
+            response => {
+                console.log(response)
+
+                this.getTareas()
+            },
+            error => console.log(error)
+        )
+
+
+
     }
 
     checkTarea(oEv) {
