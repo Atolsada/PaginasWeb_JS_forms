@@ -1,0 +1,51 @@
+{
+  "articulos": [
+    {
+      "author": {
+        "name": "Alejandro"
+      },
+      "id": 2,
+      "title": " Todos los lunes "
+    },
+    {
+      "title": "Martes",
+      "author": "Pepe Perez",
+      "editorial": "Boracay",
+      "id": 3
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "tareas": [
+    {
+      "id": 1,
+      "name": "Clases curso Paginas",
+      "isComplete": true
+    },
+    {
+      "id": 2,
+      "name": "Reunion de trabajo",
+      "isComplete": false
+    }
+  ],
+  "tareas2": [
+    {
+      "id": 1,
+      "name": "Clases curso Paginas",
+      "isComplete": true
+    },
+    {
+      "id": 2,
+      "name": "Reunion de trabajo",
+      "isComplete": false
+    }
+  ]
+}
