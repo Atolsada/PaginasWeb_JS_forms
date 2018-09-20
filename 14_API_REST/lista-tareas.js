@@ -148,7 +148,7 @@ export class ListaTareas {
     } */
     borrarSelect() {
         let aSelecionados = []
-        
+        if (!window.confirm( MENSAJES.listaTareas.confirmacion)) {return}
         this.aTareas.forEach(
             (item) => {
                 if (item.isComplete) { 
