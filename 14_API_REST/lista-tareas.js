@@ -6,7 +6,9 @@ export class ListaTareas {
         this.nodoListaTareas = document.querySelector('#lista')
         this.nodoBtnAdd = document.querySelector('#btnAdd')
         this.nodoNewTarea = document.querySelector('#inTarea')
+        this.nodoBtnBorrarSelect = document.querySelector('#btn-borrar-select')
         this.nodoBtnAdd.addEventListener('click', this.addTarea.bind(this))
+        this.nodoBtnBorrarSelect.addEventListener('click', this.borrarSelect.bind(this))
         this.uRL = 'http://localhost:3000/tareas'
         this.aTareas = []
         this.fetchService = new FetchService()
@@ -131,4 +133,7 @@ export class ListaTareas {
             )
     }
  
+    borrarSelect(){
+        console.log("Borrando")
+    }
 }
