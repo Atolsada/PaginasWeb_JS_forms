@@ -119,11 +119,17 @@ export class ListaTareas {
     }
 
     borrarTarea(p) {
-        let id = (p.target) ? p.target.dataset.id : p
+        let id
+        if (p.target) {
+            id = p.target.dataset.id
+            if (!window.confirm( MENSAJES.listaTareas.confirmacion)) {return}
+        }
+        else { 
+            id =  p
+        }
         console.log(id)
         return
-        if (!window.confirm( MENSAJES.listaTareas.confirmacion)) {return}
-        // TODO Borar en Servicio Web
+        // TO DO Borar en Servicio Web
         let url = this.uRL + '/' + id
         this.fetchService.send(url, {method: 'DELETE' })
             .then(
@@ -142,6 +148,7 @@ export class ListaTareas {
     } */
     borrarSelect() {
         let aSelecionados = []
+        
         this.aTareas.forEach(
             (item) => {
                 if (item.isComplete) { 
