@@ -17,7 +17,8 @@ export class ListaTareas {
         this.fetchService.send(this.uRL, {method: 'GET' })
             .then( data => {
                 this.aTareas = data
-                console.dir(this.aTareas)
+                
+                /* console.dir(this.aTareas)
                 this.aTareas = this.aTareas.filter(
                     (item) => {
                         console.log(item.name.indexOf('Aprender')) 
@@ -25,7 +26,7 @@ export class ListaTareas {
                         else { return false }
                     }
                 )
-                console.dir(this.aTareas)
+                console.dir(this.aTareas) */
 
                 this.renderLista()
             },
@@ -85,6 +86,8 @@ export class ListaTareas {
             },
             error => console.log(error)
         )
+
+
 
 
 
