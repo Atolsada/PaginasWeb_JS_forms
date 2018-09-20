@@ -134,6 +134,11 @@ export class ListaTareas {
     }
  
     borrarSelect(){
-        console.log("Borrando")
+        //console.log("Borrando")
+        const aSeleccionados = []
+        aSeleccionados = this.aTareas.map(//este map se esta usandocomo filtro de elegir solo los completados
+            (item)=> {if (item.isComplete) return item.id} //map se ejecuta 1 por item y se guarda en aSeleccionados
+        )
+        console.log(aSeleccionados)
     }
 }
