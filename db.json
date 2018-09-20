@@ -28,12 +28,17 @@
     {
       "id": 1,
       "name": "Clases curso Paginas",
-      "isComplete": true
+      "isComplete": false
     },
     {
       "id": 2,
       "name": "Reunion de trabajo",
       "isComplete": false
+    },
+    {
+      "name": "Aprender Angular",
+      "isComplete": false,
+      "id": 3
     }
   ],
   "tareas2": [
