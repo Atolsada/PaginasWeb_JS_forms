@@ -37,7 +37,7 @@
     },
     {
       "name": "Aprender Angular",
-      "isComplete": true,
+      "isComplete": false,
       "id": 3
     }
   ],
