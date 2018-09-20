@@ -118,11 +118,13 @@ export class ListaTareas {
             )
     }
 
-    borrarTarea(oEv) {
-        console.log(oEv.target.dataset.id)
+    borrarTarea(p) {
+        let id = (p.target) ? p.target.dataset.id : p
+        console.log(id)
+        return
         if (!window.confirm( MENSAJES.listaTareas.confirmacion)) {return}
         // TODO Borar en Servicio Web
-        let url = this.uRL + '/' + oEv.target.dataset.id
+        let url = this.uRL + '/' + id
         this.fetchService.send(url, {method: 'DELETE' })
             .then(
                 data => { 
@@ -144,6 +146,7 @@ export class ListaTareas {
             (item) => {
                 if (item.isComplete) { 
                     // TODO fetch DELETE para item.id} 
+                    this.borrarTarea(item.id)
                 } 
             }
         )
