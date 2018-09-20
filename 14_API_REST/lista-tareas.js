@@ -29,7 +29,7 @@ export class ListaTareas {
                     }
                 )
                 console.dir(this.aTareas) */
-
+                console.log("Ejecutando getTareas")
                 this.renderLista()
             },
             error => {console.dir(error)}
@@ -39,8 +39,14 @@ export class ListaTareas {
     renderLista() {
         this.nodoListaTareas.innerHTML = ''
         let html = ''
+        this.nodoBtnBorrarSelect.disable = true
+
         this.aTareas.forEach(
-            item =>  html += this.renderTarea(item)
+            item => {
+                if (item.isComplete && this.nodoBtnBorrarSelect.disable)
+                    {this.nodoBtnBorrarSelect.disable = false
+                    } 
+                html += this.renderTarea(item)}
         )
         this.nodoListaTareas.innerHTML = html
         this.aNodosChecks = document.querySelectorAll('[name="is-completa"]')
@@ -129,12 +135,15 @@ export class ListaTareas {
         }
         console.log(id)
         return
-        // TO DO Borar en Servicio Web
+        // TO DO Borrar en Servicio Web
         let url = this.uRL + '/' + id
         this.fetchService.send(url, {method: 'DELETE' })
             .then(
                 data => { 
                     console.log(data)
+                    if (p.target || p.isUltima){
+                        this.getTareas()
+                    }
                     this.getTareas() 
                 },
                 error => console.log(error)
@@ -147,16 +156,29 @@ export class ListaTareas {
             (item)=> {if (item.isComplete) return item.id}) //map se ejecuta 1 por item y se guarda en aSeleccionados
     } */
     borrarSelect() {
-        let aSelecionados = []
+        let aSelecionados = this.aTareas.filter(
+            (item)=>{item.isComplete}
+        )
+        if(aSelecionados.length) {return}
+
+
         if (!window.confirm( MENSAJES.listaTareas.confirmacion)) {return}
         this.aTareas.forEach(
             (item) => {
+                let isUltima = true
+
                 if (item.isComplete) { 
                     // TODO fetch DELETE para item.id} 
-                    this.borrarTarea(item.id)
+                    this.borrarTarea({id:item.id, isUltima : isUltima})
                 } 
             }
         )
         //console.log(aSelecionados)
+        aSeleccionados.forEach(
+            (item, i, array) => {
+                let isUltima = (i+1 === array.lenght) ? true : false
+                this.borrarTarea( {id: item.id, isUltima : isUltima} )
+            }
+        )
     }
 }
