@@ -8,11 +8,8 @@ export class Tarea {
         this.crearTarea()
         this.nodoCheck = this.nodoTarea.querySelector('input')
         this.nodoBorrar = this.nodoTarea.querySelector('.borrar-tarea')
-
         this.nodoCheck.addEventListener('change', this.sendChecked.bind(this))
         this.nodoBorrar.addEventListener('click', this.sendBorrar.bind(this))
-
-        //console.log(this.nodoCheck, this.nodoBorrar )
     }
 
     crearTarea() {
@@ -28,8 +25,19 @@ export class Tarea {
         console.dir(this.nodoTarea)
     }
 
-
     getTarea() {
         return this.nodoTarea
     }
+
+    sendBorrar () {
+        this.nodoTarea.dispatchEvent(new Event('borrarTarea', {
+            'bubbles': true}))
+    }
+
+    sendChecked () {
+        this.nodoTarea.dispatchEvent(new Event('ckeckCompleta', {
+            'bubbles': true
+        })) 
+    }
+
 }
