@@ -10,3 +10,8 @@ header {
 main {
      margin: 2rem 2rem;
 }
+
+footer {
+    border-top: 1px solid brown;
+    margin-top: 2rem;
+}
