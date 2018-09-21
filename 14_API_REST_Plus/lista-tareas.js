@@ -60,16 +60,16 @@ export class ListaTareas {
     }
 
     borrarTarea(p) {
-        let  id
+        let id
         if (p.target) {
             id = p.target.children[2].dataset.id
             if (!window.confirm( MENSAJES.listaTareas.confirmacion)) {return}
         }
         else { 
-            id =  p.id
+            id = p.id
         }
         console.log(id)
-        // TODO Borar en Servicio Web
+        // TODO Borrar en Servicio Web
         let url = this.uRL + '/' + id
         this.fetchService.send(url, {method: 'DELETE' })
             .then(
