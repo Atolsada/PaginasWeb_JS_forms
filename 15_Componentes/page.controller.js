@@ -21,7 +21,7 @@ export class PageController {
         this.main = document.createElement('main')
         this.footer = new FooterComponent(this.contentFooter).render()
 
-        document.head.insertAdjacentHTML('afterbegin', this.head)    
+        document.head.insertAdjacentHTML('afterbegin', this.head)    // <--- error
         document.body.appendChild(this.header)
         document.body.appendChild(this.menu)
         document.body.appendChild(this.main)
