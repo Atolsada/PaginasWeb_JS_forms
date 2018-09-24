@@ -2,7 +2,7 @@
   "articulos": [
     {
       "author": {
-        "name": "Alejandro"
+        "name": "ATolsada"
       },
       "id": 2,
       "title": " Todos los lunes "
@@ -28,29 +28,34 @@
     {
       "id": 1,
       "name": "Clases curso Paginas",
-      "isComplete": false
+      "isComplete": true
     },
     {
-      "id": 2,
-      "name": "Reunion de trabajo",
-      "isComplete": false
-    },
-    {
-      "name": "Aprender Angular",
-      "isComplete": false,
-      "id": 3
+      "name": "Utilizar componentes",
+      "isComplete": true,
+      "id": 4
     }
   ],
   "tareas2": [
     {
       "id": 1,
       "name": "Clases curso Paginas",
-      "isComplete": true
+      "isComplete": false
     },
     {
       "id": 2,
       "name": "Reunion de trabajo",
-      "isComplete": false
+      "isComplete": true
+    },
+    {
+      "name": "Aprender Angular",
+      "isComplete": true,
+      "id": 3
+    },
+    {
+      "name": "Utilizar componentes",
+      "isComplete": false,
+      "id": 4
     }
   ]
 }
