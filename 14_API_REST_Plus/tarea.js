@@ -29,13 +29,24 @@ export class Tarea {
         return this.nodoTarea
     }
 
-    sendBorrar () {
+    /* sendBorrar () {
         this.nodoTarea.dispatchEvent(new Event('borrarTarea', {
+            'bubbles': true}))
+    } */
+
+    /* sendChecked () {
+        this.nodoTarea.dispatchEvent(new Event('ckeckCompleta', {
+            'bubbles': true
+        })) 
+    } */
+
+    sendBorrar () {
+        this.nodoTarea.dispatchEvent(new CustomEvent('borrarTarea', {
             'bubbles': true}))
     }
 
     sendChecked () {
-        this.nodoTarea.dispatchEvent(new Event('ckeckCompleta', {
+        this.nodoTarea.dispatchEvent(new CustomEvent('ckeckCompleta', {
             'bubbles': true
         })) 
     }
