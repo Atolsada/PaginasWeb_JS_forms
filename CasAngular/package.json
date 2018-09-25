@@ -2,6 +2,7 @@
   "name": "cas-angular",
   "version": "0.0.0",
   "scripts": {
+    "ts": "ts_node",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
