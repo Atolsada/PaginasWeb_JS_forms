@@ -12,3 +12,11 @@ form small.text-muted {
 .hide {
     display: none;
 }
+
+:required {
+    border: 1px solid powderblue;
+}
+
+/* input:invalid {
+    border: 1px solid maroon;
+} */
