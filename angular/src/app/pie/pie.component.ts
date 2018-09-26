@@ -2,19 +2,20 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'cas-pie',
-  templatUrl: ./pie.component.html ,
-  template: `
-    <p>
-      pie works!
-    </p>
-  `,
+  templateUrl: './pie.component.html',
   styleUrls: ['./pie.component.css']
 })
 export class PieComponent implements OnInit {
+  empresa: string
+  lugar: string
 
-  constructor() { }
+  constructor() { 
+    
+  }
 
   ngOnInit() {
+    this.empresa = "CAS"
+    this.lugar = "Getafe"
   }
 
 }

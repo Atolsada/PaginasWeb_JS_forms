@@ -3,21 +3,17 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "CasAngular": {
+    "angular": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
       "prefix": "cas",
-      "schematics": {
-        "@schematics/angular:component": {
-          "inlineTemplate": true
-        }
-      },
+      "schematics": {},
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/CasAngular",
+            "outputPath": "dist/angular",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -54,18 +50,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "CasAngular:build"
+            "browserTarget": "angular:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "CasAngular:build:production"
+              "browserTarget": "angular:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "CasAngular:build"
+            "browserTarget": "angular:build"
           }
         },
         "test": {
@@ -99,7 +95,7 @@
         }
       }
     },
-    "CasAngular-e2e": {
+    "angular-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "architect": {
@@ -107,11 +103,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "CasAngular:serve"
+            "devServerTarget": "angular:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "CasAngular:serve:production"
+              "devServerTarget": "angular:serve:production"
             }
           }
         },
@@ -127,5 +123,5 @@
       }
     }
   },
-  "defaultProject": "CasAngular"
+  "defaultProject": "angular"
 }

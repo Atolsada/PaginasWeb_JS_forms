@@ -1,12 +1,14 @@
-
-
 class Usuario {
-    constructor(){
+    constructor() {
 
     }
-    saludar(){
+
+    saludar() {
         console.log('Hola')
     }
+
 }
+
+export class Amigo {}
 
 export default Usuario

@@ -2,11 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'cas-cabecera',
-  template: `
-    <p>
-      cabecera works!
-    </p>
-  `,
+  templateUrl: './cabecera.component.html',
   styleUrls: ['./cabecera.component.css']
 })
 export class CabeceraComponent implements OnInit {
