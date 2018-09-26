@@ -16,4 +16,3 @@ class About extends PageController {
 }
 
 document.addEventListener('DOMContentLoaded', () => { new About()})
-

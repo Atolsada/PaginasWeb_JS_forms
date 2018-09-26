@@ -21,4 +21,6 @@ export class MenuComponent {
         menu.innerHTML = `<ul class="menu">${itemsList}</ul>`
         return menu
     }
+
+
 }
