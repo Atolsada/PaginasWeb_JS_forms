@@ -1,35 +1,35 @@
-function main() {
+//function main() {
 
-    function promesas() { //<--- Este es el burguer (new promise, el NEW instancia)
-        return new Promise( //<--- Este es el ticket de compra de la hamburguesa (suele encontrarse en las primeras lineas)
-            (resolve, /* reject */) => { 
-                setTimeout (() => resolve('Ha pasado un rato'), 3000) //<--- Lo que tarda en hacerse la hamburguesa ('la hamburguesa')
+    //function promesas() { //<--- Este es el burguer (new promise, el NEW instancia)
+        //return new Promise( //<--- Este es el ticket de compra de la hamburguesa (suele encontrarse en las primeras lineas)
+            //(resolve, /* reject */) => { 
+                //setTimeout (() => resolve('Ha pasado un rato'), 3000) //<--- Lo que tarda en hacerse la hamburguesa ('la hamburguesa')
                 /* setTimeout (() => reject('Error'), 3000) */
                 //(resolve, reject) si se que nunca va a haver error no ponemos reject
-            }
-        )
-    }
+            //}
+        //)
+    //}
 
 
     /* EJEMPLO POR SI NO QUEDA CLARO */
 
-    function promesa2() { //return new Promise( (resolve, reject) => {}) funciones - resolve resuelve, reject por si algo salio mal
-        return new Promise( (resolve, reject) => { //(resolve, reject) si se que nunca va a haver error no ponemos reject
+    //function promesa2() { //return new Promise( (resolve, reject) => {}) funciones - resolve resuelve, reject por si algo salio mal
+        //return new Promise( (resolve, reject) => { //(resolve, reject) si se que nunca va a haver error no ponemos reject
             //TO DO
-            setTimeout ( ()=>{
+            //setTimeout ( ()=>{
                 // TO DO
-                let comida = 'comida preparada'
-                if (comida) {
-                    resolve(comida) //<--- avisa a la persona y va a dar la comida
-                }else{
-                    reject('Error')
-                }
+                //let comida = 'comida preparada'
+                //if (comida) {
+                    //resolve(comida) //<--- avisa a la persona y va a dar la comida
+                //}else{
+                    //reject('Error')
+                //}
 
                 
-            }, 3000)
-        })
+            //}, 3000)
+        //})
 
-    }
+    //}
     /* CONTINUACION DE EJEMPLO */
     
     /*
@@ -48,7 +48,39 @@ function main() {
     promesas()
     .then(pintar */
 
-    promesas().then( //<--- Es el señor que te atiende en el burguer 
+    //promesas().then( //<--- Es el señor que te atiende en el burguer 
+        //(response) => { console.log(response)}
+    //)
+
+    //console.log('Ultima linea')
+
+
+//}
+
+//document.addEventListener('DOMContentLoaded', main)
+
+
+/////////
+
+
+function main() {
+
+    function promesas() {
+        return new Promise(
+            (resolve) => {
+                setTimeout (() => resolve('Ha pasado un rato'), 3000)
+            }
+        )
+    }
+
+    /* function pintar(msg) {
+        console.log(msg)
+    }
+    
+    promesas()
+    .then(pintar */
+
+    promesas().then(
         (response) => { console.log(response)}
     )
 
