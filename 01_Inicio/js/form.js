@@ -19,7 +19,7 @@
     }
 } */
 
-export class Form {
+/* export class Form {
     constructor() {
         
         this.inpNombre = document.querySelector('#nombre')
@@ -42,7 +42,36 @@ export class Form {
         this.inpNombre.value = ''
         this.output.innerHTML = ''
     }
-} 
+}  */
 
 //Combertimos un fichero a modulo? como tal ya es un modulo un fichero pero lo normal es poner export al inicio
 //Despues habra que importarlo donde queramos, al poner solo export lo hacemos exportable pero nada mas
+
+
+//////////////////////////
+
+
+export class Form {
+    constructor() {
+        this.inpNombre = document.querySelector('#nombre')
+        this.btnEnviar = document.querySelector('#btnEnviar')
+        this.btnBorrar = document.querySelector('#btnBorrar')
+        this.output = document.querySelector('#output')
+        console.dir(this)
+        this.btnEnviar.addEventListener('click',       
+            this.enviar.bind(this)) 
+        this.btnBorrar.addEventListener('click',
+                this.borrar.bind(this)) 
+
+    }
+
+    enviar() {
+        // const nombre = this.inpNombre.value
+        this.output.innerHTML = `Hola ${this.inpNombre.value}`
+    }
+
+    borrar() {
+        this.inpNombre.value = ''
+        this.output.innerHTML = ''
+    }
+} 
