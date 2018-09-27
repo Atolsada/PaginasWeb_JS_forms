@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'cas-saludo',
-  templateUrl: './saludo.component.html',
-  styleUrls: ['./saludo.component.css']
+  selector: 'cas-saludo-local',
+  templateUrl: './saludo-local.component.html',
+  styleUrls: ['./saludo-local.component.css']
 })
-export class SaludoComponent implements OnInit {
+export class SaludoLocalComponent implements OnInit {
 
   nombre: string //= 'Pepe'
   nombre1: string //= "Juan"

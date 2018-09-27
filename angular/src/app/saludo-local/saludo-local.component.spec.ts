@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SaludoComponent } from './saludo-local.component';
+import { SaludoLocalComponent } from './saludo-local.component';
 
-describe('SaludoComponent', () => {
-  let component: SaludoComponent;
-  let fixture: ComponentFixture<SaludoComponent>;
+describe('SaludoLocalComponent', () => {
+  let component: SaludoLocalComponent;
+  let fixture: ComponentFixture<SaludoLocalComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SaludoComponent ]
+      declarations: [ SaludoLocalComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SaludoComponent);
+    fixture = TestBed.createComponent(SaludoLocalComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
