@@ -10,12 +10,10 @@ export class PieComponent implements OnInit {
   lugar: string
 
   constructor() { 
-    
   }
 
   ngOnInit() {
-    this.empresa = "Kamisankawa"
-    this.lugar = "Fuenlabrada"
+    this.empresa = "CAS"
+    this.lugar = "Getafe"
   }
-
 }
