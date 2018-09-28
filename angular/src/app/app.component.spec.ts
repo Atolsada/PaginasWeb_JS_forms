@@ -1,6 +1,10 @@
 import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { CabeceraComponent } from './cabecera/cabecera.component';
+import { MenuComponent } from './menu/menu.component';
+import { PieComponent } from './pie/pie.component';
+import { LogoComponent } from './logo/logo.component';
 
 
 describe('AppComponent', () => {
@@ -10,7 +14,11 @@ describe('AppComponent', () => {
         RouterTestingModule
       ],
       declarations: [
-        AppComponent
+        AppComponent,
+        CabeceraComponent,
+        MenuComponent,
+        PieComponent,
+        LogoComponent
       ],
     }).compileComponents();
   }));

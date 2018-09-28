@@ -13,7 +13,7 @@ export class PieComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.empresa = "CAS"
-    this.lugar = "Getafe"
+    this.empresa = "Kamisankawa"
+    this.lugar = "Fuenlabrada"
   }
 }
