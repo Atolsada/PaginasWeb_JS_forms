@@ -17,12 +17,12 @@ export class TareasSimpleComponent implements OnInit {
     let savedTareas = JSON.parse(localStorage.getItem('tareas'))
     if (savedTareas){
       this.aTareas = savedTareas
-    }/* else{
+    }else{
       this.aTareas = []
     }
     
 
-    console.log() */
+    console.log()
     
   }
 
