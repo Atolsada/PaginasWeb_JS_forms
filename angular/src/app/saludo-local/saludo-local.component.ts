@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'cas-saludo-local',
@@ -7,18 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SaludoLocalComponent implements OnInit {
 
-  nombre: string //= 'Pepe'
-  nombre1: string //= "Juan"
-
-  constructor() { }
+  @ViewChild('localNombre') nodoLocalNombre: ElementRef
+  
+  constructor() {
+    
+  }
 
   ngOnInit() {
-    this.nombre = 'Pepe'
-    this.nombre1 = "Juan"
+    console.log(this.nodoLocalNombre)
   }
-
-  btnBorrar() {
-    this.nombre = ''
-    this.nombre1 = ''
-  }
+   
 }

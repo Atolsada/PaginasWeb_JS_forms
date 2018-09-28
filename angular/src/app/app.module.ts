@@ -14,6 +14,8 @@ import { ContactsComponent } from './contacts/contacts.component';
 import { SaludoComponent } from './saludo/saludo.component';
 import { MainComponent } from './main/main.component';
 import { SaludoLocalComponent } from './saludo-local/saludo-local.component';
+import { ListaTareasComponent } from './lista-tareas/lista-tareas.component';
+import { TareasSimpleComponent } from './tareas-simple/tareas-simple.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { SaludoLocalComponent } from './saludo-local/saludo-local.component';
     ContactsComponent,
     SaludoComponent,
     SaludoLocalComponent,
-    MainComponent
+    MainComponent,
+    ListaTareasComponent,
+    TareasSimpleComponent
   ],
   imports: [
     BrowserModule,
