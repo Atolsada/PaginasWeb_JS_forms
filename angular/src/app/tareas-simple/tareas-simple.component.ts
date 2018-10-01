@@ -13,28 +13,22 @@ export class TareasSimpleComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-
+    this.aTareas = []
     let savedTareas = JSON.parse(localStorage.getItem('tareas'))
-    if (savedTareas){
+    if (savedTareas) {
       this.aTareas = savedTareas
-    }else{
-      this.aTareas = []
-    }
-    
-
-    console.log()
-    
+    } 
   }
 
-  addTarea(){
+  addTarea() {
     let stringTareas: string
-    if (this.sTarea){
+    if (this.sTarea) {
       this.aTareas.push(this.sTarea)
       stringTareas = JSON.stringify(this.aTareas)
       localStorage.setItem('tareas', stringTareas)
       this.sTarea = ''
     }
-    
     console.dir(this.aTareas)
   }
+
 }

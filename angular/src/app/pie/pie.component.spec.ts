@@ -22,10 +22,12 @@ describe('PieComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-  it('should not be empty the "lugar"',()=>{
-    expect(component.lugar).toBeTruthy
+
+  it('should not be empmty "lugar" ', () => {
+    expect(component.lugar).toBeTruthy()
   })
-  it('should be empty the "empresa"',()=>{
-    expect(component.empresa).toEqual('Kamisankawa')
+
+  it('should  be CAS "empresa" ', () => {
+    expect(component.empresa).toEqual('CAS')
   })
 });

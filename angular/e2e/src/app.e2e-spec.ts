@@ -1,4 +1,5 @@
 import { HomePage } from './home.po';
+import { TareasPage } from './tareas.po';
 
 describe('workspace-project Home', () => {
   let homePage: HomePage;
@@ -11,10 +12,29 @@ describe('workspace-project Home', () => {
     homePage.navigateTo();
     expect(homePage.getTitleText()).toContain('Angular');
   });
-  it('should display "Kamisankawa" in footer', () => {
+
+  it('should display "CAS" in footer', () => {
     homePage.navigateTo();
-    expect(homePage.getFooterText()).toContain('Kamisankawa');
+    expect(homePage.getFooterText()).toContain('CAS');
+  });
+
+
+});
+
+describe('Tareas', ()=>{
+  let tareasPage: TareasPage;
+
+  beforeEach(() => {
+    tareasPage = new TareasPage();
+  });
+
+  it('should display "Proyecto" in h1', () => {
+    tareasPage.navigateTo();
+    expect(tareasPage.getTitleText()).toContain('Proyecto');
   });
   
-});
-0
+  it('should display "Getafe" in footer', () => {
+    tareasPage.navigateTo();
+    expect(tareasPage.getFooterText()).toContain('CAS');
+  });
+})

@@ -16,8 +16,6 @@ import { MainComponent } from './main/main.component';
 import { SaludoLocalComponent } from './saludo-local/saludo-local.component';
 import { ListaTareasComponent } from './lista-tareas/lista-tareas.component';
 import { TareasSimpleComponent } from './tareas-simple/tareas-simple.component';
-import { TareasPlusComponent } from './tareas-plus/tareas-plus.component';
-import { CoreModule } from './core/core.module';
 
 @NgModule({
   declarations: [
@@ -33,11 +31,9 @@ import { CoreModule } from './core/core.module';
     SaludoLocalComponent,
     MainComponent,
     ListaTareasComponent,
-    TareasSimpleComponent,
-    TareasPlusComponent
+    TareasSimpleComponent
   ],
   imports: [
-    CoreModule,
     BrowserModule,
     FormsModule,
     AppRoutingModule

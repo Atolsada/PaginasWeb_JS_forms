@@ -1,8 +1,8 @@
 import { browser, by, element } from 'protractor';
 
-export class HomePage {
+export class TareasPage {
   navigateTo() {
-    return browser.get('/home');
+    return browser.get('/tareas');
   }
 
   getTitleText() {

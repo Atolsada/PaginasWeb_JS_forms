@@ -10,16 +10,12 @@
           [value]='nombre1' (input)="nombre1=$event.target.value"
           name="nombre1" id="nombre1" placeholder="Nombre">
       </div>
-<!-- El (imput) es para que cuando hay un cambio no se haga solo en la parte grafica"vista" si no que el controler se entere tambien -->
-
     <div class="form-group">
       <label for="nombre">Nombre</label>
       <input type="text" class="form-control" 
-        [(ngModel)]='nombre' 
+        [(ngModel)]='nombre'
         name="nombre" id="nombre" placeholder="Nombre">
     </div>
-    <!-- [value]='nombre1' (input)="nombre1=$event.target.value" poner esto es en ng model de angular, es igual que el input de arriba -->
-
     <button (click)="btnBorrar()" type="button" class="btn btn-primary">Borrar</button>
   </div>
   <div class="card-footer text-muted">
