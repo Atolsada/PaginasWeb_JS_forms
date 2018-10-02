@@ -9,7 +9,7 @@ import { ContactsModule } from './contacts/contacts.module';
 import { HomeModule } from './home/home.module';
 import { TareasModule } from './tareas/tareas.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatButtonModule, MatCheckboxModule} from '@angular/material';
+//import {MatButtonModule, MatCheckboxModule} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -24,8 +24,8 @@ import {MatButtonModule, MatCheckboxModule} from '@angular/material';
     HomeModule,
     TareasModule,
     BrowserAnimationsModule,
-    MatButtonModule, 
-    MatCheckboxModule
+    //MatButtonModule, 
+    //MatCheckboxModule
   ],
   providers: [],
   bootstrap: [AppComponent]

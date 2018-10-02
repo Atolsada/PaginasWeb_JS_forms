@@ -1,26 +1,24 @@
-<<<<<<< HEAD
 <div class="card">
   <div class="card-header">
-      <h4 class="card-title">Lista Plus</h4>
+      <h4 class="card-title">{{titulo}}</h4>
+      <a [href]="rutaGoogle">Ir a Google</a>
   </div>
   <div class="card-body">
     <div class="form-group">
       <label for="">Nueva tarea</label>
       <input type="text" class="form-control" 
-      name="tarea" id="tarea" [(ngModel)]="sTarea">
+      name="tarea" id="tarea" [(ngModel)]="newTarea.name">
     </div>
     <button type="button" class="btn btn-success"
     (click)="addTarea()">Añadir</button>
   </div>
- <div *ngIf="aTareas.length" class="card-footer text-muted">
+  <div>
+    <button (click)='addTarea()' type="button" class="btn btn-succes">Añadir</button>
+  </div>
+ <!-- <div *ngIf="aTareas.length" class="card-footer text-muted">
       <h4 class="card-title">Tareas</h4>
       <ul *ngFor="let item of aTareas" class="list-group">
         <li class="list-group-item">{{item}}</li>
       </ul>
-  </div> 
+  </div>  -->
 </div>
-=======
-<p>
-  tareas-plus works!
-</p>
->>>>>>> 1ae9a9a00768227c49e389a639b55216487a2224
