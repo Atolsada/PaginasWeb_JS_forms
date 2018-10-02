@@ -11,6 +11,9 @@ import { ContactsComponent } from './contacts.component';
   ],
   declarations: [
     ContactsComponent
+  ],
+  entryComponents: [
+    ContactsComponent
   ]
 })
 export class ContactsModule { }

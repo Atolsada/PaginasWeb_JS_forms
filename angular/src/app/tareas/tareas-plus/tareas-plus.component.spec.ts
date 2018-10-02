@@ -1,22 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AboutComponent } from './about.component';
-import { MatCheckboxModule } from '@angular/material';
+import { TareasPlusComponent } from './tareas-plus.component';
 
-describe('AboutComponent', () => {
-  let component: AboutComponent;
-  let fixture: ComponentFixture<AboutComponent>;
+describe('TareasPlusComponent', () => {
+  let component: TareasPlusComponent;
+  let fixture: ComponentFixture<TareasPlusComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AboutComponent ],
-      imports: [MatCheckboxModule]
+      declarations: [ TareasPlusComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AboutComponent);
+    fixture = TestBed.createComponent(TareasPlusComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
