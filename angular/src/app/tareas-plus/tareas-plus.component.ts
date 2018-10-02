@@ -10,6 +10,17 @@ export class TareasPlusComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.titulo = 'Lista tareas'
+    this.rutaGoogle = 'www.google.es'
+    this.newTarea = {nombre:'', isCompleted: false}
+    this.aTareas = []
   }
 
+  addTarea(){
+    let oDatos = JSON.parse(JSON.stringify(this.newTarea))
+    
+    this.aTareas.push(this.newTarea)
+    console.log(this.aTareas)
+    this.newTarea.nombre = ''
+  }
 }
