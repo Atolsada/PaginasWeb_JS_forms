@@ -32,4 +32,3 @@ import {MatButtonModule, MatCheckboxModule} from '@angular/material';
 })
 export class AppModule { 
 }
-
