@@ -8,6 +8,7 @@ import { PieComponent } from './core/pie/pie.component';
 import { LogoComponent } from './core/logo/logo.component';
 
 
+
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
