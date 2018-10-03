@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ContactoIf } from '../../models/contacto.model';
 
 @Component({
@@ -9,11 +9,19 @@ import { ContactoIf } from '../../models/contacto.model';
 export class ContactoComponent implements OnInit {
 
   @Input() contacto: ContactoIf
+  @Output() eventoBorrar: EventEmitter<string>
+
   fullname: string;
-  constructor() { }
+  constructor() {
+    this.eventoBorrar = new EventEmitter()
+   }
 
   ngOnInit() {
     this.fullname = `${this.contacto.name.title}. ${this.contacto.name.first} ${this.contacto.name.last}`
+  }
+
+  sendBorrar(){
+    this.eventoBorrar.emit(this.contacto.email)
   }
 
 }
