@@ -17,15 +17,10 @@ export class ListaContactosComponent implements OnInit {
     this.aContactos = USERS
   }
 
-  borrarContacto(email){
-
-    console.log('Evento recibido')
-    console.dir(email)
-    console.log(email)
-    console.log(this.aContactos.filter(
-      (item)=>{item.email != email}) )
+  borrarContacto(badEmail) {
     
-    
+  this.aContactos = this.aContactos.filter(
+      (item) => item.email != badEmail )
   }
 
 }

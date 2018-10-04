@@ -4,7 +4,7 @@
     </li>
 </ul> -->
 
-<div *ngFor="let item of aContactos" class="col-6">
-    <cas-contacto [contacto]="item"(eventoBorrar)="borrarContacto($event)"></cas-contacto>
+<div *ngFor="let item of aContactos.slice(0)" class="col-6">
+    <cas-contacto [contacto]="item" (eventoBorrar)="borrarContacto($event)"></cas-contacto>
 </div>
 
