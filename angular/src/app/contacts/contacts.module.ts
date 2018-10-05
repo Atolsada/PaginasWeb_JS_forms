@@ -6,10 +6,13 @@ import { ContactsComponent } from './contacts.component';
 import { ListaContactosComponent } from './lista-contactos/lista-contactos.component';
 import { ContactoComponent } from './contacto/contacto.component';
 
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   imports: [
     CommonModule,
-    ContactsRoutingModule
+    ContactsRoutingModule,
+    HttpClientModule
   ],
   declarations: [
     ContactsComponent,

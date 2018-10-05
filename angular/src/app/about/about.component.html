@@ -1,4 +1,20 @@
 <p>
-  about works!
+  about works en{{
+    (!empresa) ? 'miEmpresa' : empresa}}
+    <p>
+      Empresa Cliente: {{cliente?.nombre}}
+    </p>
   <mat-checkbox>Me gusta material</mat-checkbox>
 </p>
+<cas-articulo 
+[titulo]="Angular fundamentos"
+[autor]="'Pepe Perez'">
+<h2>Acerca de Angular</h2>
+<p>
+  <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum quam quasi dolor incidunt quidem! Quos sunt, aliquam ad tempora voluptas voluptatibus earum. Eius nobis et repudiandae assumenda minus quibusdam consectetur!</span>
+  <span>Molestiae sunt, est commodi perferendis necessitatibus sit atque consequuntur asperiores vel iure! Atque maiores voluptate, necessitatibus doloribus aliquam facere nesciunt dignissimos dolorum architecto possimus. Eius ducimus in sequi deleniti quasi?</span>
+  <span>Quae est minus similique perspiciatis fugit facilis exercitationem delectus tempore cum laudantium! Cupiditate perferendis eaque ab quos quam reprehenderit corporis officiis, commodi qui quidem excepturi voluptatem quibusdam odio quia soluta.</span>
+  <span>Minus tempore similique ex eaque assumenda molestias blanditiis alias quo veniam hic. Ipsa ullam natus dolorem nisi aperiam, quae ipsam consequatur corporis consectetur amet distinctio tempora libero. Obcaecati, consequuntur eligendi.</span>
+  <span>Exercitationem reprehenderit, inventore quaerat excepturi, voluptates quasi officiis laborum soluta ipsum aut voluptatum quod nihil est maxime voluptate. Nemo quas soluta exercitationem sapiente praesentium ut odit itaque, illo consectetur facere!</span>
+</p>
+</cas-articulo>
