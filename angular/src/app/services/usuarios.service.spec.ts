@@ -1,9 +1,11 @@
 import { TestBed } from '@angular/core/testing';
 
 import { UsuariosService } from './usuarios.service';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('UsuariosService', () => {
   beforeEach(() => TestBed.configureTestingModule({
+    imports: [HttpClientModule],
     providers: [UsuariosService]
   }));
 

@@ -1,9 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ContactoComponent } from './contacto.component';
-import { ListaContactosComponent } from '../lista-contactos/lista-contactos.component';
-import { UsuariosService } from '../../services/usuarios.service';
-import { HttpClientModule } from '@angular/common/http';
 
 describe('ContactoComponent', () => {
   let component: ContactoComponent;
@@ -11,12 +8,7 @@ describe('ContactoComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [
-        ContactoComponent,
-        ListaContactosComponent,
-      ],
-      imports: [HttpClientModule],
-      providers: [UsuariosService],
+      declarations: [ ContactoComponent ]
     })
     .compileComponents();
   }));
@@ -25,57 +17,57 @@ describe('ContactoComponent', () => {
     fixture = TestBed.createComponent(ContactoComponent);
     component = fixture.componentInstance;
     component.contacto = {
-      gender: string,
+      gender: '',
       name: {
-          title: string,
-          first: string,
-          last: string
+          title: '',
+          first: '',
+          last: ''
       },
       location: {
-          street: string,
-          city: string,
-          state: string,
-          postcode: string | number,
+          street: '',
+          city: '',
+          state: '',
+          postcode: '',
           coordinates: {
-              latitude: string,
-              longitude: string
+              latitude: '',
+              longitude: ''
           },
           timezone: {
-              offset: string,
-              description: string
+              offset: '',
+              description: ''
           }
       },
-      email: string,
+      email: '',
       login: {
-          uuid: string,
-          username: string,
-          password: string,
-          salt: string,
-          md5: string,
-          sha1: string,
-          sha256: string
+          uuid: '',
+          username: '',
+          password: '',
+          salt: '',
+          md5: '',
+          sha1: '',
+          sha256: ''
       },
       dob: {
-          date: string,
-          age: number
+          date: '',
+          age: 0
       },
       registered: {
-          date: string,
-          age: number
+          date: '',
+          age: 0
       },
-      phone: string,
-      cell: string,
+      phone: '',
+      cell: '',
       id: {
-          name: string,
-          value: string
+          name: '',
+          value: ''
       },
       picture: {
-          large: string,
-          medium: string,
-          thumbnail: string
+          large: '',
+          medium: '',
+          thumbnail: ''
       },
-      nat: string
-  };
+      nat: ''
+    };
     fixture.detectChanges();
   });
 
